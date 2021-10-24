@@ -50,7 +50,8 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <!-- imagen de logo -->
+    <img class="animation__shake" src="" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -82,7 +83,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <!-- imagen de logo -->
+      <img src="" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">GRAPEV&G</span>
     </a>
 
@@ -261,6 +263,14 @@
             }, {
                 label: "Existencias:",
                 name: "existencias"
+            },  {
+                label: "Imagenes:",
+                name: "files[].id",
+                type: "uploadMany",
+                display: function ( fileId, counter ) {
+                    return '<img src="'+editor.file( 'files', fileId ).web_path+'"/>';
+                },
+                noFileText: 'No hay imagenes'
             }
         ]
     } );
@@ -271,7 +281,16 @@
         columns: [
             { data: "nombre" },
             { data: "precio", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) },
-            { data: "existencias" }
+            { data: "existencias" },
+            {
+                data: "files",
+                render: function ( d ) {
+                    return d.length ?
+                        d.length+' imagen(es)' :
+                        'No hay imagen(es)';
+                },
+                title: "Imagen"
+            }
         ],
         select: true,
         buttons: [
