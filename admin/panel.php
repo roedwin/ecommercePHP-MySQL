@@ -7,7 +7,7 @@
       session_destroy();
       header("location: index.php");
     }
-    if(isset($_SESSION['id'])== false){
+    if(isset($_SESSION['id']) == false){
       header("location: index.php");
     }
     $modulo=$_REQUEST['modulo']??'';

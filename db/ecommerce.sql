@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2021 a las 18:15:11
+-- Tiempo de generación: 25-10-2021 a las 04:02:35
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -68,7 +68,20 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`id`, `filename`, `filesize`, `web_path`, `system_path`) VALUES
-(1, 'Logotipo-CocaCola-Colombia.png', 39534, '/ecommerce/uploads/1.png', 'C:/xampp/htdocs/ecommerce/uploads/1.png');
+(1, 'Logotipo-CocaCola-Colombia.png', 39534, '/ecommerce/uploads/1.png', 'C:/xampp/htdocs/ecommerce/uploads/1.png'),
+(2, '280px-Pepsi_logo_2014.svg.png', 20372, '/ecommerce/uploads/2.png', 'C:/xampp/htdocs/ecommerce/uploads/2.png'),
+(3, '0-7525_red-square-logo-logos-coca-cola-logo-now.jpg', 39491, '/ecommerce/uploads/3.jpg', 'C:/xampp/htdocs/ecommerce/uploads/3.jpg'),
+(4, '280px-Pepsi_logo_2014.svg.png', 21235, '/ecommerce/uploads/4.png', 'C:/xampp/htdocs/ecommerce/uploads/4.png'),
+(5, '580b57fcd9996e24bc43c1f2.png', 11628, '/ecommerce/uploads/5.png', 'C:/xampp/htdocs/ecommerce/uploads/5.png'),
+(6, '580b57fcd9996e24bc43c1f2.png', 48423, '/ecommerce/uploads/6.png', 'C:/xampp/htdocs/ecommerce/uploads/6.png'),
+(7, 'índice.jpg', 7878, '/ecommerce/uploads/7.jpg', 'C:/xampp/htdocs/ecommerce/uploads/7.jpg'),
+(8, 'Fanta-Logo.png', 31907, '/ecommerce/uploads/8.png', 'C:/xampp/htdocs/ecommerce/uploads/8.png'),
+(9, 'Mirinda-Logo-1995.png', 57146, '/ecommerce/uploads/9.png', 'C:/xampp/htdocs/ecommerce/uploads/9.png'),
+(10, '7-up_Logo.svg.png', 21593, '/ecommerce/uploads/10.png', 'C:/xampp/htdocs/ecommerce/uploads/10.png'),
+(11, 'Logo-Coca-Cola.jpg', 17527, '/ecommerce/uploads/11.jpg', 'C:/xampp/htdocs/ecommerce/uploads/11.jpg'),
+(12, '0-7525_red-square-logo-logos-coca-cola-logo-now.jpg', 39491, '/ecommerce/uploads/12.jpg', 'C:/xampp/htdocs/ecommerce/uploads/12.jpg'),
+(13, '0-7525_red-square-logo-logos-coca-cola-logo-now.jpg', 39491, '/ecommerce/uploads/13.jpg', 'C:/xampp/htdocs/ecommerce/uploads/13.jpg'),
+(14, 'índice.jpg', 4097, '/ecommerce/uploads/14.jpg', 'C:/xampp/htdocs/ecommerce/uploads/14.jpg');
 
 -- --------------------------------------------------------
 
@@ -88,7 +101,13 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `precio`, `existencias`) VALUES
-(1, 'Coca-Cola 2.5 lt', 2.25, 10);
+(1, 'Coca-Cola 2.5 lt', 2.25, 10),
+(3, 'Pepsi', 1.25, 20),
+(4, 'Sprite', 2, 4),
+(5, 'Mountain Dew', 1, 10),
+(6, 'Fanta', 3, 6),
+(7, 'Mirinda', 1, 9),
+(8, '7up', 2, 7);
 
 -- --------------------------------------------------------
 
@@ -106,7 +125,13 @@ CREATE TABLE `productos_files` (
 --
 
 INSERT INTO `productos_files` (`producto_id`, `file_id`) VALUES
-(1, 1);
+(3, 4),
+(4, 6),
+(5, 7),
+(6, 8),
+(7, 9),
+(8, 10),
+(1, 14);
 
 -- --------------------------------------------------------
 
@@ -127,7 +152,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `pass`) VALUES
 (1, 'Edwin', 'info@proyectoSoft.com', 'e10adc3949ba59abbe56e057f20f883e'),
-(3, 'Yasuri', 'yasuri@proyectoSoft.com', '202cb962ac59075b964b07152d234b70');
+(3, 'Yasuri', 'yasuri@proyectoSoft.com', '202cb962ac59075b964b07152d234b70'),
+(4, 'Rafael Zelaya', 'rafa@proyectoSoft.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -204,19 +230,19 @@ ALTER TABLE `detalleventas`
 -- AUTO_INCREMENT de la tabla `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`

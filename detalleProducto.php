@@ -56,10 +56,17 @@
               </div>
 
               <div class="mt-4">
-                <div class="btn btn-primary btn-lg btn-flat">
+                <button class="btn btn-primary btn-lg btn-flat" id="agregarCarrito" 
+                data-id="<?php echo $_REQUEST['id'] ?>" 
+                data-nombre="<?php echo $rowProducto['nombre'] ?>" 
+                data-web_path="<?php echo $rowImanegenPrin['web_path'] ?>">
                   <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                  Add to Cart
-                </div>
+                  Agregar al carrito
+                </button>
+              </div>
+              <div class="mt4">
+                  Cantidad
+                  <input type="number" class="form-control" id="cantidadProducto" value="1">
               </div>
 
               <div class="mt-4 product-share">
@@ -102,3 +109,4 @@
     document.getElementById('PrimerImagen').src= x.src;
    }
 </script>
+<script src="./admin/js/ecommerce.js"></script>
